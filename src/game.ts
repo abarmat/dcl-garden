@@ -1,8 +1,4 @@
-// TODO: an OpenSea NFT helper
-// TODO: random background color
-
-const CONTRACT_ADDRESS = '0x74f1241adda635f3f2e214543a39bee0bb7c0fef'
-// const CONTRACT_ADDRESS = '0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756'
+const CONTRACT_ADDRESS = '0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756'
 
 async function fetchAssetContract(contractAddress: string) {
   const url = `https://api.opensea.io/api/v1/asset_contract/${contractAddress}/`
@@ -20,6 +16,7 @@ function createNFTShape(contractAddress: string, tokenId: string) {
 }
 
 function spiralCoordsAtStep(step) {
+  // const incr = angle ? 1 / (a + b * angle) : 0.1
   const angle = 0.12 * step
   const x = (1 + angle) * Math.cos(angle)
   const y = (1 + angle) * Math.sin(angle)
